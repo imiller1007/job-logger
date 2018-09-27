@@ -7,8 +7,6 @@ document.onload = $.get("api/all-jobs", function(data){
     }
 });
 
-
-
 $("#newJob").on("click", function(event){
     event.preventDefault();
     $("#jForm").show();
@@ -26,6 +24,7 @@ $("#cancel").on("click", function(event){
     $("#contact").val('');
     $("#url").val('');
     $("#subButton").html("Submit");
+    $("#postJob").html("Post New Job:")
     update = false;
     $("#url").removeAttr('disabled');
 });
@@ -78,6 +77,6 @@ $("#jobTable").on("click", ".btn.btn-default.btn-xs", function(){
 
         $("#url").attr('disabled','disabled');
         $("#subButton").html("Update")
-
+        $("#postJob").html("Update Job:")
     })
 });
