@@ -1,4 +1,5 @@
 var update = false;
+var updatedJobID = 0;
 document.onload = $("#jForm").hide();
 document.onload = $.get("api/all-jobs", function(data){
     update = false;
@@ -48,7 +49,7 @@ $("#jForm").submit(function(event){
   }
     else{
         $.ajax({
-            url: `api/job/${job.url}`,
+            url: `api/job/${updatedJobID}`,
             type: "PUT",
             data: job,
             success: function(response){
@@ -62,6 +63,7 @@ $("#jForm").submit(function(event){
 $("#jobTable").on("click", ".btn.btn-default.btn-xs", function(){
     update = true;
     var jobID = $(this).attr("id")
+    updatedJobID = jobID;
     $.get(`api/jobs/${jobID}`, function(data){
         console.log(data)
         $("#jForm").show();

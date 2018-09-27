@@ -57,12 +57,12 @@ module.exports = function(app) {
         })
       });
 
-      app.put("/api/job/:url", function(req, res) {
+      app.put("/api/job/:id", function(req, res) {
         db.job.update(
           req.body,
           {
             where: {
-              url: req.params.url
+              id: req.params.id
             }
           }).then(function(data) {
           res.json(data);
