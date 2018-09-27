@@ -1,0 +1,16 @@
+.truncated {
+    position: relative;
+ }
+ 
+.truncateBody {
+   position: absolute;
+   max-width: 95%;
+   white-space: nowrap;
+   overflow: hidden;         
+   text-overflow: ellipsis;
+ }
+
+h1 {
+   text-decoration: underline; 
+}
+
